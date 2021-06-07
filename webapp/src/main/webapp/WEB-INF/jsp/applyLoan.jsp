@@ -13,15 +13,11 @@
 	<div class="container">
 		<%@include file="errorMessage.jsp"%>
 		<div id="applyForLoan">
-			<form id="newTransactionForm" action="newTransaction" method="post">
+			<form id="newloanForm" action="applyLoan" method="post">
 			<br/><br/>
-				<div id="input-group-transcode" class="form-group">
-					<label for="transcode" class="control-label">Transaction code</label>
-					<input type="text" class="form-control" id="transcode" name="transcode" placeholder="Transaction Code">
-				</div>
 				<div id="input-group-toAccount" class="form-group">
-					<label for="toAccountNum" class="control-label">To (account number)</label>
-					<input type="number" class="form-control" id="toAccountNum" name="toAccountNum" placeholder="To Account Number">
+					<label for="fromAccountNum" class="control-label">From (account number)</label>
+					<input type="number" class="form-control" id="fromAccountNum" name="fromAccountNum" placeholder="From Account Number">
 				</div>
 				<div id="input-group-amount" class="form-group">
 					<label for="amount" class="control-label">Amount</label>
@@ -33,6 +29,5 @@
 	</div>
 	</main>
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery-1.11.3.js" />"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/transaction.js" />"></script>
   </body>
 </html>

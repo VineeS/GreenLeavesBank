@@ -135,7 +135,39 @@ html {
       </div>
     </div>
   </div>
+
+
+<div class="column">
+    <div class="card">
+         <a class="welcome-Page" href="login"><img alt="Loan Apply logo" class="center" src="<c:url value="/resources/img/Loan.png" />  "width="120" height="120"  ></a>
+    
+<!--       <img src="leafIcon.jpg"  style="width:100%">
+ -->      <div class="container">
+        <h2 style="font-family:Times New Roman" >Apply For Loan</h2>
+        <!-- <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>john@example.com</p> -->
+        <!-- <p><button class="button">Contact</button></p> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+         <a class="welcome-Page" href="login"><img alt="Bill Payment logo" class="center" src="<c:url value="/resources/img/credit.png" />  "width="120" height="120"  ></a>
+    
+<!--       <img src="leafIcon.jpg"  style="width:100%">
+ -->      <div class="container">
+        <h2 style="font-family:Times New Roman" >Apply For Credit Card</h2>
+        <!-- <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>john@example.com</p> -->
+        <!-- <p><button class="button">Contact</button></p> -->
+      </div>
+    </div>
+  </div>
 </div>
+
 
 </body>
 </html>
