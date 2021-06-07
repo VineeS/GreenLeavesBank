@@ -69,11 +69,15 @@
 			<form id="registrationForm" action="newTransaction" method="get">
 				<button id="createTransBtn" type="submit" class="btn btn-default">New Transaction</button>
 			</form>
-			<h6>FILE UPLOAD</h6>
-			<form action="FileUploadServlet" enctype="multipart/form-data" method="post" id="file-upload">
-				Select<input type="file" name="file2" id="fileName" /><br>
-				<input type="submit" value="upload" id="fileUploadBtn" />
+			
+		</div>
+		
+		<div id="applyForLoan" style="padding-top: 50px">
+			<h4>APPLY FOR LOAN</h4>
+			<form id="loanForm" action="applyLoan" method="get">
+				<button id="applyLoanBtn" type="submit" class="btn btn-default">Apply For Loan</button>
 			</form>
+			
 		</div>
 	</main>
   </body>
