@@ -10,5 +10,8 @@ public interface ClientAccountDAO {
 	void create(ClientAccount clientAccount) throws ServiceException;
 
 	void update(ClientAccount clientAccount) throws ServiceException;
+	void updateLoan(ClientAccount clientAccount) throws ServiceException;
+	void updateCreditCard(ClientAccount clientAccount) throws ServiceException;
+	
 
 }

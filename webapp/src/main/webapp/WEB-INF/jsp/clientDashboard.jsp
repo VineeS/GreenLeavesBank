@@ -15,15 +15,24 @@
 			<h4>ACCOUNT BALANCE</h4>
 			<div><h1 style="color: slategray; font-size: 80px;">$${clientInfo.account.amount}</h1></div>
 		</div>
+		<div id="loanBalance">
+			<h4>LOAN BALANCE</h4>
+			<div><h1 style="color: slategray; font-size: 80px;">$${clientInfo.account.loanAmount}</h1></div>
+		</div>
+		<div id="creditCardBalance">
+			<h4>CREDIT CARD BALANCE</h4>
+			<div><h1 style="color: slategray; font-size: 80px;">$${clientInfo.account.creditCardAmount}</h1></div>
+		</div>
 		<div id="transHistory">
 			<h4>TRANSACTION HISTORY</h4>
 			<table border="1" cellpadding="5" class="commonTable">
 				<tr>
 					<th style="width: 150px">Transaction code</th>
 					<th style="width: 150px">To (account number)</th>
-					<th style="width: 150px">Datatime</th>
+					<th style="width: 150px">Datetime</th>
 					<th style="width: 150px">Amount</th>
 					<th style="width: 150px">Status</th>
+					<th style="width: 150px">Type of Transaction</th>
 				</tr>
 				<c:forEach var="trans" items="${clientInfo.transactions}">
 					<c:choose>
@@ -34,6 +43,8 @@
 								<td>${trans.dateTime}</td>
 								<td>${trans.amount}</td>
 								<td>${trans.status}</td>
+								<td>${trans.type_of_transaction}</td>
+								
 							</tr>
 						</c:when>
 						<c:when test="${trans.status=='DECLINED'}">
@@ -43,6 +54,7 @@
 								<td>${trans.dateTime}</td>
 								<td>${trans.amount}</td>
 								<td>${trans.status}</td>
+								<td>${trans.type_of_transaction}</td>
 							</tr>
 						</c:when>
 						<c:otherwise>
@@ -57,6 +69,7 @@
 								<c:if test="${not empty trans.status}">
 									<td>${trans.status}</td>
 								</c:if>
+								<td>${trans.type_of_transaction}</td>
 							</tr>
 						</c:otherwise>
 					</c:choose>
@@ -71,13 +84,17 @@
 			</form>
 			
 		</div>
-		
 		<div id="applyForLoan" style="padding-top: 50px">
 			<h4>APPLY FOR LOAN</h4>
 			<form id="loanForm" action="applyLoan" method="get">
 				<button id="applyLoanBtn" type="submit" class="btn btn-default">Apply For Loan</button>
 			</form>
-			
+		</div>
+		<div id="applyForCreditCard" style="padding-top: 50px">
+			<h4>APPLY FOR CREDIT CARD</h4>
+			<form id="creditCardForm" action="applyCreditCard" method="get">
+				<button id="applyCreditCardBtn" type="submit" class="btn btn-default">Apply For Credit Card</button>
+			</form>
 		</div>
 	</main>
   </body>

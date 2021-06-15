@@ -96,6 +96,8 @@ public class ClientInfoDAOImpl extends AbstractDAOImpl implements ClientInfoDAO 
 				account.setUser(user);
 				account.setId(rs.getInt("acc.id"));
 				account.setAmount(rs.getBigDecimal("acc.amount"));
+				account.setLoanAmount(rs.getBigDecimal("acc.loan_amount"));
+				account.setCreditCardAmount(rs.getBigDecimal("acc.credit_card_amount"));
 				clientInfo = new ClientInformation();
 				clientInfo.setId(rs.getInt("info.id"));
 				clientInfo.setUser(user);

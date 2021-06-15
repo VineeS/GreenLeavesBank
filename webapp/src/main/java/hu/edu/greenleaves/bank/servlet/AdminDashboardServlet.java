@@ -121,6 +121,8 @@ public class AdminDashboardServlet extends DefaultServlet {
 				ClientAccount clientAccount = new ClientAccount();
 				clientAccount.setUser(new User(userId));
 				clientAccount.setAmount(Constants.INIT_AMOUNT);
+				clientAccount.setLoanAmount(Constants.INIT_LOAN_AMOUNT);
+				clientAccount.setCreditCardAmount(Constants.INIT_CREDITCARD_AMOUNT);
 				clientAccountDAO.create(clientAccount);
 				/* generate and send transaction codes */
 				List<String> codes = TransactionCodeGenerator.generateCodes(100);
@@ -149,6 +151,7 @@ public class AdminDashboardServlet extends DefaultServlet {
 		String[] decisions = req.getParameterValues("decision");
 		int[] transIds = toIntegerArray(req.getParameterValues("trans_id"));
 		String[] transAccNum = req.getParameterValues("trans_toAccountNum");
+		String[] transType = req.getParameterValues("trans_type_of_transaction");
         BigDecimal[] transAmount = convertStringtoBigDecimal(req.getParameterValues("trans_amount"));
 
 		List<TransactionForClient> transactions = new ArrayList<TransactionForClient>();
@@ -160,10 +163,18 @@ public class AdminDashboardServlet extends DefaultServlet {
 				trans.setToAccountNum(transAccNum[i]);
 				trans.setAmount(transAmount[i]);
 				trans.setId(transId);
+				trans.setType_of_transaction(transType[i]);
 				trans.setStatus(decision.getTransStatus());
 				if (decision.getStatus().name().equals("APPROVED")) {
+					if(transType[i].equals("Transfer")) {
                     try {
                         clientTransactionDAO.updateReceiver(trans);
+                        clientTransactionDAO.updateSender(trans);
+                    } catch (ServiceException e) {
+                        sendError(req, e.getMessage());
+                    }
+                }else {
+                	try {
                         clientTransactionDAO.updateSender(trans);
                     } catch (ServiceException e) {
                         sendError(req, e.getMessage());
@@ -171,6 +182,7 @@ public class AdminDashboardServlet extends DefaultServlet {
                 }
 
 				transactions.add(trans);
+			}
 			}
 		}
 		if (!transactions.isEmpty()) {

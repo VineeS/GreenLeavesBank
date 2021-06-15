@@ -12,20 +12,16 @@
 	<br/>
 	<div class="container">
 		<%@include file="errorMessage.jsp"%>
-		<div id="applyForLoan">
-			<form id="newloanForm" action="applyLoan" method="post">
+		<div id="applyForCreditCard">
+			<form id="newCreditCardForm" action="applyCreditCard" method="post">
 			<br/><br/>
 				<div id="input-group-transcode" class="form-group">
 					<label for="transcode" class="control-label">Transaction code</label>
 					<input type="text" class="form-control" id="transcode" name="transcode" placeholder="Transaction Code">
 				</div>
-				<div id="input-group-toAccount" class="form-group">
+				<div id="input-group-fromAccount" class="form-group">
 					<label for="fromAccountNum" class="control-label">From (account number)</label>
 					<input type="number" class="form-control" id="fromAccountNum" name="fromAccountNum" placeholder="From Account Number">
-				</div>
-				<div id="input-group-amount" class="form-group">
-					<label for="amount" class="control-label">Amount</label>
-					<input type="number" class="form-control" id="amount" name="amount" placeholder="amount">
 				</div>
 				<button id="createTransBtn" type="submit" class="btn btn-default">Submit</button>
 			</form>

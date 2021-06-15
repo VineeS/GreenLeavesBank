@@ -24,5 +24,13 @@ public interface ClientTransactionDAO {
 
     Boolean validTransaction(TransactionForClient transaction) throws  ServiceException;
 
+	Boolean validLoanTransaction(TransactionForClient transaction) throws ServiceException;
+
+	void createLoan(TransactionForClient clientTransaction) throws ServiceException;
+
+	void createCreditCard(TransactionForClient clientTransaction) throws ServiceException;
+
+	Boolean validCreditCardApplicationTransaction(TransactionForClient transaction) throws ServiceException;
+
 
 }

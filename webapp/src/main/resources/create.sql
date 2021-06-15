@@ -26,6 +26,8 @@ CREATE TABLE `client_account` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `amount` decimal(19,4) DEFAULT NULL,
+  `loan_amount` decimal(19,4) DEFAULT NULL,
+  `credit_card_amount` decimal(19,4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -86,6 +88,7 @@ CREATE TABLE `client_transaction` (
   `amount` decimal(19,4) DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `to_account_num` varchar(45) NOT NULL,
+  `type_of_transaction` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

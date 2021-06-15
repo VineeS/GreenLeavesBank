@@ -71,8 +71,9 @@
 						<tr>
 							<th style="width: 150px">Transaction code</th>
 							<th style="width: 150px">To (account number)</th>
-							<th style="width: 150px">Datatime</th>
+							<th style="width: 150px">Datetime</th>
 							<th style="width: 150px">Amount</th>
+							<th style="width: 150px">Type of Transaction</th>
 							<th style="width: 150px">Decision</th>
 						</tr>
 						<c:forEach var="trans" items="${transList}">
@@ -81,6 +82,7 @@
 								<td>${trans.toAccountNum}</td>
 								<td>${trans.dateTime}</td>
 								<td>${trans.amount}</td>
+								<td>${trans.type_of_transaction}</td>
 								<td><select name="decision" id="AdminDecision">
 										<option value="waiting"></option>
 										<option value="approve">Approve Transaction</option>
@@ -89,6 +91,7 @@
 									<input type="hidden" name="trans_id" value="${trans.id}">
                                     <input type="hidden" name="trans_toAccountNum" value="${trans.toAccountNum}">
                                     <input type="hidden" name="trans_amount" value="${trans.amount}">
+                                    <input type="hidden" name="trans_type_of_transaction" value="${trans.type_of_transaction}">
 								</td>
 							</tr>
 						</c:forEach>

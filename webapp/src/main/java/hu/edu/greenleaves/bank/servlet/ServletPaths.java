@@ -13,4 +13,7 @@ public class ServletPaths {
 	public static final String ADMIN_DASHBOARD_PAGE = "/AdminDashboard";
 	public static final String WELCOME = "/welcome";
 	public static final String NEW_TRANSACTION = "/newTransaction";
+	public static final String APPLY_LOAN = "/applyLoan";
+	public static final String APPLY_CREDITCARD = "/applyCreditCard";
+	
 }
